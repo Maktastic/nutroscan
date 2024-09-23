@@ -18,12 +18,15 @@ export default function Home() {
       </Head>
 
 
-			<div className='flex justify-start items-center absolute top-10 left-0 w-full'>
+			<div className='flex justify-start items-center gap-16 absolute top-0 left-0 w-full bg-transparent z-10'>
 				<Image src={logoIcon} alt={'logo'} className='w-40 z-10 self-start' />
 				<ul className='flex gap-12'>
 					<li className='font-bold tracking-wider'>Home</li>
 					<li className='font-bold tracking-wider'>About</li>
 					<li className='font-bold tracking-wider'>Contact</li>
+					<li className='font-bold tracking-wider'>Pricing</li>
+					<li className='font-bold tracking-wider'>About</li>
+					<li className='font-bold tracking-wider'>Pricing</li>
 					<li className='font-bold tracking-wider'>Pricing</li>
 				</ul>
 			</div>
