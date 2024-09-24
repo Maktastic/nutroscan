@@ -6,7 +6,7 @@ import clipboardIcon from '@/assets/clipboard_icon.svg';
 import recycleIcon from '@/assets/recycle_icon.svg';
 import checkmarkIcon from '@/assets/checkmark_icon.svg';
 import wandIcon from '@/assets/wand.svg';
-import logoIcon from '@/assets/logo.png';
+import logoIcon from '@/assets/logo_white.svg';
 import Image from 'next/image';
   
 export default function Home() {
@@ -18,21 +18,22 @@ export default function Home() {
       </Head>
 
 
-			<div className='flex justify-center items-center gap-16 absolute top-0 left-0 w-full bg-transparent z-20'>
-				<Image src={logoIcon} alt={'logo'} className='w-40 z-10 self-start' />
-				<ul className='flex gap-12'>
-					<li className='font-bold tracking-wider'>Home</li>
-					<li className='font-bold tracking-wider'>About</li>
-					<li className='font-bold tracking-wider'>Contact</li>
-					<li className='font-bold tracking-wider'>Pricing</li>
-					<li className='font-bold tracking-wider'>About</li>
+			<div className='grid grid-cols-3 items-center gap-16 p-4 fixed top-0 left-0 w-full transparent backdrop-blur-2xl z-20'>
+				<Image src={logoIcon} alt={'logo'} className='w-20 z-10 justify-self-center' />
+				<ul className='flex gap-12 justfy-self-center cursor-pointer'>
+					<li className='font-bold tracking-wider hover:scale-110 transition ease-in-out'>Home</li>
+					<li className='font-bold tracking-wider hover:scale-110 transition ease-in-out'>About</li>
+					<li className='font-bold tracking-wider hover:scale-110 transition ease-in-out'>Contact</li>
+					<li className='font-bold tracking-wider hover:scale-110 transition ease-in-out'>Pricing</li>
+					<li className='font-bold tracking-wider hover:scale-110 transition ease-in-out'>Careers</li>
 				</ul>
+        <button className='font-bold text-emerald-800 rounded-lg w-40 py-2 bg-[#fefee3] justify-self-center shadow-lg'>Login / Sign Up</button>
 			</div>
       
       <div className="min-h-screen flex flex-col items-center flex-wrap">
 				
         {/* Hero Section */}
-        <section className="w-full h-screen flex flex-col items-center justify-center text-center text-white px-6 z-10 bg-gradient-to-r from-green-900 to-green-500">
+        <section className="w-full h-screen flex flex-col items-center justify-center text-center text-white px-6 z-10 bg-gradient-to-r from-green-400 to-green-800">
 					<h1 className="text-5xl font-bold mb-4"><span className='bg-gradient-to-r p-4 from-green-900 to-green-700 rounded-lg'>AI</span> Meal Plans for Disease Management</h1>
           <p className="text-lg mb-8">Get custom meal plans tailored to your specific health conditions and dietary preferences.</p>
 
