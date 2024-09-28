@@ -13,6 +13,7 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ isModalOpen, onClose, mea
       isOpen={isModalOpen}
       onClose={onClose}
       aria-labelledby="meal-plan-modal"
+      className='z-20'
     >
       <ModalHeader>
         <span className='text-2xl'>Your Personalized Meal Plan</span>

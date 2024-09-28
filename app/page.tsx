@@ -79,7 +79,7 @@ export default function Home() {
               onChange={(e) => setUserInput(e.target.value)}
               required
             />
-            <Image src={wandIcon} alt="wand icon" className="w-12 absolute right-2 top-2" />
+            <Image src={wandIcon} alt="wand icon" className="w-12 h-full absolute top-0 right-0" />
           </form>
 
           <div className="flex items-center justify-center rounded-full bg-green-100 mt-4 cursor-pointer hover:bg-green-200 group">
