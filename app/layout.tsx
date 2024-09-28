@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { NextUIProvider } from "@nextui-org/react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,10 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        {children}
+        <NextUIProvider>
+          {children}
+        </NextUIProvider>
+
       </body>
     </html>
   );

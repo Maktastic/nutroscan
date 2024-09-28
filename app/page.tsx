@@ -11,13 +11,16 @@ import logoIcon from '@/public/assets/logo_green.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { Modal, Button } from '@nextui-org/react';
+import MealPlanModal from '@/components/Modal';
 
 export default function Home() {
-  const [userInput, setUserInput] = useState('');
-  const [mealPlan, setMealPlan] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [userInput, setUserInput] = useState<string>('');
+  const [mealPlan, setMealPlan] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleGenerateMealPlan = async (e: any) => {
+  const handleGenerateMealPlan = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
@@ -33,6 +36,7 @@ export default function Home() {
       const data = await response.json();
       if (data.mealPlan) {
         setMealPlan(data.mealPlan);
+        setIsModalOpen(true); // Open the modal when the meal plan is ready
       }
     } catch (error) {
       console.error('Error generating meal plan:', error);
@@ -42,7 +46,7 @@ export default function Home() {
   };
   
   return (
-    <div className="relative">
+    <>
       <Head>
         <title>Meal Plan Generator</title>
         <meta name="description" content="Custom meal plans for specific health conditions" />
@@ -86,15 +90,13 @@ export default function Home() {
             }
             
           </div>
-
-          {/* Display the Generated Meal Plan */}
-          {mealPlan && (
-            <section className="w-full h-auto py-8 px-6">
-              <h2 className="text-2xl font-bold mb-4">Your Personalized Meal Plan:</h2>
-              <pre className="bg-gray-100 p-4 rounded-lg whitespace-pre-wrap">{mealPlan}</pre>
-            </section>
-          )}
         </section>
+
+        <MealPlanModal
+          isModalOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          mealPlan={mealPlan}
+        />
 
         {/* Content Section */}
         <section className="w-full h-screen flex gap-8 items-center justify-center flex-wrap text-black px-6 py-8 border-b border-gray-300">
@@ -154,6 +156,6 @@ export default function Home() {
           </div>
         </footer>
       </div>
-    </div>
+    </>
   );
 }
