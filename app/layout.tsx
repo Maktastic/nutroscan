@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export const metadata: Metadata = {
   title: "Create Next App",
