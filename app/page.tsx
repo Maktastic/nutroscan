@@ -9,9 +9,7 @@ import checkmarkIcon from '@/public/assets/checkmark_icon.svg';
 import wandIcon from '@/public/assets/wand.svg';
 import logoIcon from '@/public/assets/logo_green.svg';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
-import { Modal, Button } from '@nextui-org/react';
 import MealPlanModal from '@/components/Modal';
 
 export default function Home() {
@@ -30,13 +28,15 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userInput }), // Send user input to the backend
+				body: JSON.stringify({ healthCondition: userInput }), // Send user input to the backend
       });
 
       const data = await response.json();
+
       if (data.mealPlan) {
+				delete data.mealPlan.isValid
         setMealPlan(data.mealPlan);
-        setIsModalOpen(true); // Open the modal when the meal plan is ready
+        setIsModalOpen(true);
       }
     } catch (error) {
       console.error('Error generating meal plan:', error);
@@ -80,23 +80,22 @@ export default function Home() {
               required
             />
             <Image src={wandIcon} alt="wand icon" className="w-12 h-full absolute top-0 right-0" />
+
+						
           </form>
 
-          <div className="flex items-center justify-center rounded-full bg-green-100 mt-4 cursor-pointer hover:bg-green-200 group">
-            {loading ? 
-              <button type="submit" className="text-xl text-green-600 group-hover:text-green-800">Generating...</button> 
-              : 
-              <button type="submit" className="w-12 h-12 text-xl text-green-600 group-hover:text-green-800"><i className="fas fa-arrow-right"></i></button> 
-            }
-            
-          </div>
+					<div className="flex items-center justify-center rounded-full p-2 bg-green-100 mt-4 cursor-pointer hover:bg-green-200 group">
+						{loading ?
+							<button type="submit" className="text-xl text-green-600 group-hover:text-green-800">Generating...</button>
+							:
+							<button type="submit" className="w-12 h-12 text-xl text-green-600 group-hover:text-green-800"><i className="fas fa-arrow-right"></i></button>
+						}
+
+					</div>
+
+          
         </section>
 
-        <MealPlanModal
-          isModalOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          mealPlan={mealPlan}
-        />
 
         {/* Content Section */}
         <section className="w-full h-screen flex gap-8 items-center justify-center flex-wrap text-black px-6 py-8 border-b border-gray-300">
@@ -156,6 +155,12 @@ export default function Home() {
           </div>
         </footer>
       </div>
+
+			<MealPlanModal
+				isModalOpen={isModalOpen}
+				onClose={() => setIsModalOpen(false)}
+				mealPlan={mealPlan}
+			/>
     </>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { NextUIProvider } from "@nextui-org/react";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,6 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+			<Head>
+				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6860205400583484"
+					crossOrigin="anonymous"></script>
+			</Head>
       <body
         className={`antialiased`}
       >
