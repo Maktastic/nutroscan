@@ -3,6 +3,7 @@ import "./globals.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { NextUIProvider } from "@nextui-org/react";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Nutroscan: AI Personalized Meal Plans for Better Health | Custom Diet Plans for Health Conditions",
@@ -43,6 +44,7 @@ export default function RootLayout({
         </noscript>
         <NextUIProvider>
           {children}
+          <Analytics />
         </NextUIProvider>
 
       </body>
