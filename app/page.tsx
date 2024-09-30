@@ -143,6 +143,9 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4">Nutroscan Meal Plans</h3>
               <p className="text-white mb-4">AI-powered meal plans tailored to help manage your health condition with ease and precision.</p>
               <p className="text-white">© {new Date().getFullYear()} Nutroscan. All rights reserved.</p>
+              <p className='mt-3'>
+                <a href="/privacy-policy" className="text-blue-400">Privacy Policy</a>
+              </p>
             </div>
             <div className="justify-self-end">
               <Image src={logoIcon} alt="Logo Icon" className="w-32 h-32" />
