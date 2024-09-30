@@ -48,8 +48,6 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Meal Plan Generator</title>
-        <meta name="description" content="Custom meal plans for specific health conditions" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6860205400583484"
         crossOrigin="anonymous"></script>
       </Head>
