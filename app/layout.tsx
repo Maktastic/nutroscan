@@ -29,7 +29,7 @@ export default function RootLayout({
         />
         <link rel="icon" href="/assets/favicon.ico" />
 				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6860205400583484"
-					crossOrigin="anonymous"></script>
+        crossOrigin="anonymous"></script>
 			</Head>
       <body
         className={`antialiased`}
