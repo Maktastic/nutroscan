@@ -83,6 +83,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 		// Send the request to OpenAI
 		const response = await openai.beta.chat.completions.parse({
 			model: 'gpt-4o-2024-08-06',
+			// @ts-ignore
 			messages: messages,
 			response_format: zodResponseFormat(MealPlanSchema, "mealPlan"),  // Validate the response using zod schema
 			max_tokens: 1000,
