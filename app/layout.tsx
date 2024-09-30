@@ -17,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
 			<Head>
-        <script
+         <meta name="google-adsense-account" content="ca-pub-6860205400583484" />
+          <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
