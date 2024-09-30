@@ -47,11 +47,6 @@ export default function Home() {
   
   return (
     <>
-      <Head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6860205400583484"
-        crossOrigin="anonymous"></script>
-      </Head>
-
       {/* Navbar */}
       <div className="flex justify-center items-center gap-16 p-4 fixed top-0 left-0 w-full transparent backdrop-blur-sm z-20">
         <Image src={logoIcon} alt="logo" className="w-[100px] z-10 justify-self-center" />
