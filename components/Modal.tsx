@@ -1,5 +1,6 @@
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter, ModalContent } from '@nextui-org/react';
 import { useRef } from 'react';
+// @ts-ignore
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 
 interface Meal {
@@ -25,7 +26,7 @@ interface MealPlan {
 interface MealPlanModalProps {
 	isModalOpen: boolean;
 	onClose: () => void;
-	mealPlan: MealPlan;
+	mealPlan: MealPlan | any;
 }
 
 const MealPlanModal: React.FC<MealPlanModalProps> = ({ isModalOpen, onClose, mealPlan }) => {
