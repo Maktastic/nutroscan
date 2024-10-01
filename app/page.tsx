@@ -57,6 +57,7 @@ export default function Home() {
   return (
     <>
       <GoogleTagManager />
+      <div className='hidden'><a href="https://www.sigmatraffic.com?ref=279792">Buy website traffic cheap</a></div>
       {/* Navbar */}
       <div className="flex justify-center items-center gap-16 p-4 fixed top-0 left-0 w-full transparent backdrop-blur-sm z-20">
         <Image src={logoIcon} alt="logo" className="w-[100px] z-10 justify-self-center max-sm:w-[80px]" />
