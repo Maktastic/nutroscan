@@ -111,6 +111,7 @@ export default function Home() {
         </section>
 
         {/* Content Section */}
+				
         <CardSection />
 
         {/* How It Works Section */}
