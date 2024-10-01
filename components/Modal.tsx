@@ -161,24 +161,24 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ isModalOpen, onClose, mea
 		>
 			<ModalContent>
 				<ModalHeader>
-					<span className="text-2xl">Your Personalized Meal Plan</span>
+					<span className="text-2xl max-sm:text-xl">Your Personalized Meal Plan</span>
 				</ModalHeader>
 
 				<ModalBody>
 					{parsedMealPlan ? (
 						<div ref={planRef} className="space-y-6">
 							{Object.entries(parsedMealPlan).map(([day, meals]) => (
-								<div key={day} className="border p-4 rounded-lg bg-[#292f46]">
-									<h3 className="text-xl mb-4 font-semibold capitalize">{day.replace('day', 'Day ')}</h3>
+								<div key={day} className="border p-4 rounded-lg bg-[#292f46] max-sm:py-6">
+									<h3 className="text-xl mb-4 font-semibold capitalize max-sm:text-lg">{day.replace('day', 'Day ')}</h3>
 
 									<div className="ml-4 space-y-4">
 										{Object.entries(meals as DayMealPlan).map(([mealType, meal]: [string, Meal]) => (
 											<div key={mealType}>
-												<strong className="text-lg">{mealType.charAt(0).toUpperCase() + mealType.slice(1)}:</strong>
-												<p className="mb-2">{meal.description}</p>
+												<strong className="text-lg max-sm:text-md max-sm:mb-8">{mealType.charAt(0).toUpperCase() + mealType.slice(1)}:</strong>
+												<p className="mb-2 max-sm:text-sm max-sm:mb-3">{meal.description}</p>
 
 												{/* Nutritional Values */}
-												<div className="grid grid-cols-4 gap-2 text-sm text-gray-400">
+												<div className="grid grid-cols-4 gap-2 text-sm text-gray-400 max-sm:flex max-sm:flex-col max-sm:gap-3">
 													<div><strong>Calories:</strong> {meal.nutrition.calories}</div>
 													<div><strong>Protein:</strong> {meal.nutrition.protein}</div>
 													<div><strong>Fats:</strong> {meal.nutrition.fats}</div>

@@ -32,7 +32,9 @@ export default function RootLayout({
         className={inter.className}
       >
         <NextUIProvider>
-          <Toaster position="bottom-center" />
+					<Toaster position="bottom-center" toastOptions={{
+						className: 'max-sm:text-[12px]'
+					}} />
           <PageWrapper>
             {children}
           </PageWrapper>

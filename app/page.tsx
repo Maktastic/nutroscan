@@ -18,6 +18,10 @@ export default function Home() {
 
   const handleGenerateMealPlan = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+		if(!userInput || userInput.length === 0) {
+			toast.error('Please provide a health condition')
+			return
+		}
     setLoading(true);
     toast.loading('Waiting...');
     try {
@@ -62,7 +66,7 @@ export default function Home() {
       <div className="min-h-screen flex flex-col items-center flex-wrap">
 
         {/* Hero Section */}
-        <section className="w-full h-screen bg-[url('/assets/background.jpg')] bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center text-center text-black px-6 z-10 border-b border-gray-300">
+        <section className="w-full h-screen relative bg-[url('/assets/background.jpg')] bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center text-center text-black px-6 z-10 border-b border-gray-300">
           <h1 className="max-sm:text-3xl text-5xl font-bold text-black mb-4 max-sm:flex max-sm:flex-col max-sm:items-center">
             <span className="bg-gradient-to-r p-4 text-white from-green-900 to-green-700 rounded-lg mr-2 max-sm:w-1/4 max-sm:mb-4">AI</span>
             Meal Plans for Disease Management
@@ -80,7 +84,7 @@ export default function Home() {
           >
             <motion.input
               type="text"
-              className="text-black rounded-lg px-4 py-2 border border-gray-300 w-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition ease-in-out duration-500 max-sm:text-sm"
+              className="text-black rounded-lg px-4 py-2 border border-gray-300 w-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition ease-in-out duration-500 max-sm:text-[12px]"
               placeholder="Enter your dietary needs or health condition"
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
@@ -92,10 +96,15 @@ export default function Home() {
             <Image src={wandIcon} alt="wand icon" className="w-12 h-full absolute top-0 right-0" />
           </motion.form>
 
-          <div className='text-sm flex items-center gap-2 mt-4'>
+          <div className='text-sm flex items-center gap-2 mt-4 max-sm:hidden'>
             <div className='w-6 h-6 text-gray-500 rounded-full bg-emerald-50 flex justify-center items-center'><i className="fa-solid fa-info fa-xs" /></div>
             <p className='text-gray-500'>Press Enter after typing in your health condition</p>
           </div>
+
+					<div className="hidden max-sm:flex mt-4">
+						{/* @ts-ignore */}
+						<button className='rounded-full bg-emerald-300 px-3 py-2' onClick={(e) => handleGenerateMealPlan(e)}><i className='fa fa-arrow-right text-emerald-800' /></button>
+					</div>
 
           <ScrollDownIcon />
 
