@@ -128,8 +128,8 @@ export default function Home() {
               { step: 'Step 4: Shop', icon: 'fas fa-shopping-cart', description: 'Download your shopping list and easily purchase all the ingredients.' }
             ].map((item, index) => (
               <div key={index} className="flex flex-col items-center text-center md:text-left">
-                <div className={`w-16 h-16 flex items-center justify-center rounded-full bg-${index % 2 === 0 ? 'blue' : 'green'}-100 mb-4 max-sm:w-12 max-sm:h-12`}>
-                  <i className={`${item.icon} text-3xl text-${index % 2 === 0 ? 'blue' : 'green'}-600 max-sm:text-xl`}></i>
+                <div className={`animate-bounce w-16 h-16 flex items-center justify-center rounded-full bg-${index % 2 === 0 ? 'blue' : 'green'}-400 mb-4 max-sm:w-12 max-sm:h-12`}>
+                  <i className={`${item.icon} text-3xl text-${index % 2 === 0 ? 'blue' : 'emerald'}-600 max-sm:text-xl`}></i>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 max-sm:text-[15px]">{item.step}</h3>
                 <p className="text-gray-600 text-center max-sm:text-sm">{item.description}</p>
