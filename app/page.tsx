@@ -1,6 +1,7 @@
 'use client'
 import wandIcon from '@/public/assets/wand.svg';
 import logoIcon from '@/public/assets/logo_green.svg';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import MealPlanModal from '@/components/Modal';
@@ -9,6 +10,7 @@ import { toast } from 'react-hot-toast';
 import { motion } from "framer-motion";
 import ScrollDownIcon from '@/components/ScrollDown';
 import CardSection from '@/components/CardSection';
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
   const [userInput, setUserInput] = useState<string>('');
@@ -18,10 +20,10 @@ export default function Home() {
 
   const handleGenerateMealPlan = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-		if(!userInput || userInput.length === 0) {
-			toast.error('Please provide a health condition')
-			return
-		}
+    if (!userInput || userInput.length === 0) {
+      toast.error('Please provide a health condition')
+      return
+    }
     setLoading(true);
     toast.loading('Waiting...');
     try {
@@ -58,9 +60,6 @@ export default function Home() {
     <>
       <GoogleTagManager />
       {/* Navbar */}
-      <div className="flex justify-center items-center gap-16 p-4 fixed top-0 left-0 w-full transparent backdrop-blur-sm z-20">
-        <Image src={logoIcon} alt="logo" className="w-[100px] z-10 justify-self-center max-sm:w-[80px]" />
-      </div>
 
       {/* Main Content */}
       <div className="min-h-screen flex flex-col items-center flex-wrap">
@@ -101,24 +100,24 @@ export default function Home() {
             <p className='text-gray-500'>Press Enter after typing in your health condition</p>
           </div>
 
-					<div className="hidden max-sm:flex mt-4">
-						{/* @ts-ignore */}
-						<button className='rounded-full bg-emerald-300 px-3 py-2' onClick={(e) => handleGenerateMealPlan(e)}><i className='fa fa-arrow-right text-emerald-800' /></button>
-					</div>
+          <div className="hidden max-sm:flex mt-4">
+            {/* @ts-ignore */}
+            <button className='rounded-full bg-emerald-300 px-3 py-2' onClick={(e) => handleGenerateMealPlan(e)}><i className='fa fa-arrow-right text-emerald-800' /></button>
+          </div>
 
           <ScrollDownIcon />
 
         </section>
 
         {/* Content Section */}
-				
+
         <CardSection />
 
         {/* How It Works Section */}
-        <section className="w-full h-screen flex flex-col shadow-lg justify-center gap-20 items-center text-black px-6 py-8 border-b border-gray-300 max-sm:gap-4 max-sm:h-auto max-sm:py-12">
+        <section className="w-full h-screen flex flex-col shadow-lg justify-center gap-20 items-center text-black px-6 py-8 max-sm:gap-4 max-sm:h-auto max-sm:py-12">
           <div className="w-full h-50 flex flex-col gap-3 justify-center items-center p-4 max-sm:h-auto max-sm:p-2">
-            <span className="text-4xl font-bold text-gray-800 max-sm:text-xl">How it works</span>
-            <div className="w-14 bg-[#2F855A] h-1 border-none"></div>
+            <span className="text-4xl font-bold text-gray-100 max-sm:text-xl">How it works</span>
+            <div className="w-14 bg-emerald-400 h-1 border-none"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-left container max-sm:gap-8">
@@ -132,30 +131,13 @@ export default function Home() {
                 <div className={`animate-bounce w-16 h-16 flex items-center justify-center rounded-full bg-${index % 2 === 0 ? 'blue' : 'green'}-400 mb-4 max-sm:w-12 max-sm:h-12`}>
                   <i className={`${item.icon} text-3xl text-${index % 2 === 0 ? 'blue' : 'emerald'}-600 max-sm:text-xl`}></i>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 max-sm:text-[15px]">{item.step}</h3>
-                <p className="text-gray-600 text-center max-sm:text-sm">{item.description}</p>
+                <h3 className="text-2xl text-gray-50 font-bold mb-4 max-sm:text-[15px]">{item.step}</h3>
+                <p className="text-gray-200 text-center max-sm:text-sm">{item.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="w-full bg-emerald-900 text-white py-12 shadow-lg">
-          <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 max-sm:px-4 max-sm:flex max-sm:flex-col max-sm:flex-col-reverse">
-            {/* Company Info */}
-            <div>
-              <h3 className="text-2xl font-bold mb-4 max-sm:text-md max-sm:text-center">Nutroscan Meal Plans</h3>
-              <p className="text-white mb-4 max-sm:text-sm max-sm:text-center">AI-powered meal plans tailored to help manage your health condition with ease and precision.</p>
-              <p className="text-white max-sm:text-sm max-sm:text-center">© {new Date().getFullYear()} Nutroscan. All rights reserved.</p>
-              <p className='mt-3 max-sm:text-sm max-sm:text-center'>
-                <a href="/privacy-policy" className="text-emerald-300">Privacy Policy</a>
-              </p>
-            </div>
-            <div className="justify-self-end max-sm:self-center">
-              <Image src={logoIcon} alt="Logo Icon" className="w-32 h-32 max-sm:w-20 max-sm:h-20" />
-            </div>
-          </div>
-        </footer>
       </div>
 
       <MealPlanModal

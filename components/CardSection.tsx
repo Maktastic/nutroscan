@@ -18,11 +18,11 @@ const CardSection = () => {
   ];
 
   return (
-    <section className="w-full h-screen flex gap-8 items-center justify-center bg-gray-50 flex-wrap text-black px-6 py-8 border-b border-gray-300 max-sm:flex-col max-sm:h-auto">
+    <section className="w-full h-screen flex gap-8 items-center justify-center bg-gray-800 flex-wrap text-black px-6 py-8 border-b border-emerald-400 max-sm:flex-col max-sm:h-auto">
       {cardData.map((card, index) => (
         <motion.div
           key={index}
-          className="card p-8 w-1/4 flex flex-col justify-between gap-4 items-start rounded-lg shadow-lg max-sm:w-full max-sm:gap-3"
+          className="card p-8 w-1/4 h-[350px] flex flex-col justify-between gap-4 bg-gray-100 items-start rounded-lg shadow-lg max-sm:w-full max-sm:gap-3"
           initial={{ opacity: 0, y: 50 }} // Start slightly lower
           whileInView={{ opacity: 1, y: 0 }} // Smoothly fade and slide into view
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.15 }} // Custom easing for smoothness

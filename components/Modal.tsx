@@ -153,28 +153,26 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ isModalOpen, onClose, mea
 			classNames={{
 				body: "py-6",
 				backdrop: "bg-[#292f46]/50 backdrop-opacity-40",
-				base: "border-[#292f46] bg-[#19172c] dark:bg-[#19172c] text-[#a8b0d3]",
-				header: "border-b-[1px] border-[#292f46]",
-				footer: "border-t-[1px] border-[#292f46]",
+				base: "bg[#030712] dark:bg-[#030712] text-gray-800",
 				closeButton: "hover:bg-white/5 active:bg-white/10",
 			}}
 		>
-			<ModalContent>
+			<ModalContent className='bg-gray-900'>
 				<ModalHeader>
-					<span className="text-2xl max-sm:text-xl">Your Personalized Meal Plan</span>
+					<span className="text-2xl text-emerald-500 max-sm:text-xl">Your Personalized Meal Plan</span>
 				</ModalHeader>
 
 				<ModalBody>
 					{parsedMealPlan ? (
 						<div ref={planRef} className="space-y-6">
 							{Object.entries(parsedMealPlan).map(([day, meals]) => (
-								<div key={day} className="border p-4 rounded-lg bg-[#292f46] max-sm:py-6">
-									<h3 className="text-xl mb-4 font-semibold capitalize max-sm:text-lg">{day.replace('day', 'Day ')}</h3>
+								<div key={day} className="p-4 rounded-lg bg-gray-800 max-sm:py-6">
+									<h3 className="text-xl mb-4 font-semibold text-emerald-500 capitalize max-sm:text-lg">{day.replace('day', 'Day ')}</h3>
 
 									<div className="ml-4 space-y-4">
 										{Object.entries(meals as DayMealPlan).map(([mealType, meal]: [string, Meal]) => (
 											<div key={mealType}>
-												<strong className="text-lg max-sm:text-md max-sm:mb-8">{mealType.charAt(0).toUpperCase() + mealType.slice(1)}:</strong>
+												<strong className="text-lg text-gray-300 max-sm:text-md max-sm:mb-8">{mealType.charAt(0).toUpperCase() + mealType.slice(1)}:</strong>
 												<p className="mb-2 max-sm:text-sm max-sm:mb-3">{meal.description}</p>
 
 												{/* Nutritional Values */}
@@ -196,7 +194,7 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ isModalOpen, onClose, mea
 				</ModalBody>
 
 				<ModalFooter>
-					<Button color="primary" onClick={handleDownloadPdf}>Download as PDF</Button>
+					<Button color="success" onClick={handleDownloadPdf}>Download as PDF</Button>
 				</ModalFooter>
 			</ModalContent>
 		</Modal>

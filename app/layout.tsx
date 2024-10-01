@@ -8,6 +8,8 @@ import Script from "next/script";
 import { Toaster } from "react-hot-toast";
 import PageWrapper from "@/components/PageWrapper";
 import { Inter } from 'next/font/google';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,7 +38,9 @@ export default function RootLayout({
 						className: 'max-sm:text-[12px]'
 					}} />
           <PageWrapper>
+            <Navbar />
             {children}
+            <Footer />
           </PageWrapper>
           <Analytics />
         </NextUIProvider>

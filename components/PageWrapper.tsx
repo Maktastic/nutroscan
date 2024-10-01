@@ -35,6 +35,7 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
           initial="hidden"
           animate={isLoading ? 'hidden' : 'visible'}
           variants={pageLoadAnimation}
+          className='bg-gray-900'
         >
           {children}
         </motion.div>
