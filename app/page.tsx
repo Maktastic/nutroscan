@@ -66,8 +66,23 @@ export default function Home() {
       <GoogleTagManager />
       {/* Navbar */}
 
+      <div className="fixed top-10 right-5 w-[250px] h-[54px] shadow-lg z-50 max-sm:hidden">
+        <a
+          href="https://www.producthunt.com/posts/nutroscan?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-nutroscan"
+          target="_blank"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=497591&theme=light"
+            alt="Nutroscan&#0032; - Custom&#0032;AI&#0032;Meal&#0032;Plans&#0032;for&#0032;Your&#0032;Health&#0032;🍽️ | Product Hunt"
+            style={{ width: "250px", height: "54px" }}
+            width="250"
+            height="54"
+          />
+        </a>
+      </div>
+
       {/* Main Content */}
-      <div className="min-h-screen flex flex-col items-center flex-wrap">
+      <div className="min-h-screen flex flex-col items-center flex-wrap relative">
         {/* Hero Section */}
         <section className="w-full h-screen relative bg-[url('/assets/background.jpg')] bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center text-center text-black px-6 z-10 border-b border-gray-300">
           <h1 className="max-sm:text-3xl text-5xl font-bold text-black mb-4 max-sm:flex max-sm:flex-col max-sm:items-center">
