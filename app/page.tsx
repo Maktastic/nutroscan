@@ -119,6 +119,7 @@ export default function Home() {
             {/* @ts-ignore */}
             <button
               className="rounded-full bg-emerald-300 px-3 py-2"
+              // @ts-ignore
               onClick={(e) => handleGenerateMealPlan(e)}
             >
               <i className="fa fa-arrow-right text-emerald-800" />
