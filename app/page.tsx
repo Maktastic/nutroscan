@@ -30,7 +30,7 @@ export default function Home() {
     toast.loading("Waiting...");
     try {
       const response = await fetch(
-        "https://9e4cadb9-ddf1-48ed-8b4a-8de8333c943c.eu-central-1.cloud.genez.io",
+        "http://localhost:8083/.functions/function-generatemealplan",
         {
           method: "POST",
           headers: {
