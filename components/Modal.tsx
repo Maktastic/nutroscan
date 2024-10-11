@@ -132,7 +132,7 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({
         // Nutritional values
         const nutrition = mealDetails.nutrition;
         page.drawText(
-          `Calories: ${nutrition.calories}, Protein: ${nutrition.protein}g, Fats: ${nutrition.fats}g, Carbs: ${nutrition.carbohydrates}g`,
+          `Calories: ${nutrition.calories}, Protein: ${nutrition.protein}, Fats: ${nutrition.fats}, Carbs: ${nutrition.carbohydrates}`,
           {
             x: paddingX + 10,
             y: yPosition,
