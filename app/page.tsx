@@ -35,7 +35,6 @@ export default function Home() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.nutroscan.com",
           },
           body: JSON.stringify({ healthCondition: userInput }), // Send user input to the backend
         }
