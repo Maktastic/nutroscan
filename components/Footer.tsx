@@ -10,7 +10,7 @@ export default function Footer() {
               <h3 className="text-2xl text-gray-800 font-bold mb-4 max-sm:text-md max-sm:text-center">Nutroscan Meal Plans</h3>
               <p className="mb-4 max-sm:text-sm text-gray-800 max-sm:text-center">AI-powered meal plans tailored to help manage your health condition with ease and precision.</p>
               <p className="max-sm:text-sm text-gray-800 max-sm:text-center">© {new Date().getFullYear()} Nutroscan. All rights reserved.</p>
-              <p className='mt-3 max-sm:text-sm max-sm:text-center flex gap-4'>
+              <p className='mt-3 max-sm:text-sm max-sm:justify-center flex gap-4'>
                 <a href="/privacy-policy" className="text-gray-800 font-bold">Privacy Policy</a>
                 <a href="/terms-and-conditions" className="text-gray-800 font-bold">Terms and Conditions</a>
               </p>
