@@ -15,7 +15,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Nutroscan: AI Personalized Meal Plans for Better Health | Custom Diet Plans for Health Conditions",
+  title: "Nutroscan: AI Personalized Meal Plans for Better Health",
   description: "Nutroscan offers AI-generated meal plans tailored to your specific health conditions. Achieve optimal health with our personalized diet solutions.",
 };
 
@@ -29,7 +29,7 @@ export default function RootLayout({
       <Head>
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
-      <Script id='google-adsense' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6860205400583484" crossOrigin="anonymous" async strategy="afterInteractive">
+      <Script id='google-adsense' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6860205400583484" crossOrigin="anonymous" async strategy="afterInteractive" defer>
       </Script>
       <body
         className={inter.className}
